@@ -66,6 +66,14 @@ export default {
         .attr('transform', 'translate(0,' + chartHeight + ')')
         .call(xAxis)
 
+      svg.append('text').attr('x', (chartWidth / 2))
+        .attr('y', chartHeight + this.margin)
+        .attr('text-anchor', 'middle')
+        .style('font-size', '16px')
+        .style('text-decoration', 'underline')
+        .style('text-decoration', 'underline')
+        .text('Blood sugar')
+
       svg.append('g')
         .attr('class', 'y axis')
         .call(yAxis)
