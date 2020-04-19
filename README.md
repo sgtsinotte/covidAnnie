@@ -12,7 +12,7 @@ Diabete pump can be connected to the internet and transmit data to the equipemen
 
 
 ## Project setup
-You will need 
+You will need npm to install, hence nodejs
 
 ```
 npm install
