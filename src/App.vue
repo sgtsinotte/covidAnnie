@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="header"></div>
+    <div class="header"><img src="./assets/logo.png" height="60px"/></div>
     <h1 class="title">{{Title}}</h1>
     <Table :msg="Title" :customers="Customers" />
   </div>
@@ -444,8 +444,9 @@ export default {
 }
 
 .header{
-  background-color: #3257a8;
+  background-color: #6f5280;
   height: 60px;
+  text-align: right;
 }
 
 .title{

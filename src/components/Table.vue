@@ -99,5 +99,9 @@ export default {
     & .normal{
       background: green;
     }
+
+    & tr{
+      cursor: pointer;
+    }
   }
 </style>

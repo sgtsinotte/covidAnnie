@@ -6,7 +6,6 @@
 
 <script>
 import * as d3 from 'd3'
-// import * as moment from 'moment/moment'
 
 export default {
   name: 'Chart',
@@ -31,12 +30,21 @@ export default {
   },
   methods: {
     renderChart (data) {
-      // const minAcceptableValue = this.min
-      // const maxAcceptableValue = this.max
       const max = Math.max(...data)
       const chartWidth = this.svg_width - (2 * this.margin)
       const chartHeight = this.svg_height - (2 * this.margin)
+      const lastValue = data[data.length - 1]
+      let areaColor = 'black'
 
+      if (lastValue <= this.min) {
+        areaColor = 'red'
+      } else if (lastValue >= this.max) {
+        areaColor = '#ba0000'
+      } else {
+        areaColor = 'green'
+      }
+
+      console.log(areaColor)
       const x = d3.scaleLinear()
         .range([0, chartWidth])
         .domain([0, data.length - 1])
@@ -55,9 +63,9 @@ export default {
         .y0(chartHeight)
         .curve(d3.curveLinear)
 
-      const svg = d3.select('svg')
+      const svg = d3.select(`.${this.className} svg`)
         .attr('width', chartWidth + 60)
-        .attr('height', chartHeight + 50)
+        .attr('height', chartHeight + 100)
         .append('g')
         .attr('transform', 'translate(50, 10)')
 
@@ -66,14 +74,6 @@ export default {
         .attr('transform', 'translate(0,' + chartHeight + ')')
         .call(xAxis)
 
-      svg.append('text').attr('x', (chartWidth / 2))
-        .attr('y', chartHeight + this.margin)
-        .attr('text-anchor', 'middle')
-        .style('font-size', '16px')
-        .style('text-decoration', 'underline')
-        .style('text-decoration', 'underline')
-        .text('Blood sugar')
-
       svg.append('g')
         .attr('class', 'y axis')
         .call(yAxis)
@@ -81,7 +81,15 @@ export default {
       svg.append('path')
         .datum(data)
         .attr('class', 'line')
+        .attr('fill', areaColor)
         .attr('d', line)
+
+      svg.append('text')
+        .attr('class', 'title')
+        .attr('x', this.margin)
+        .attr('y', chartHeight + 40)
+        .attr('text-align', 'center')
+        .text(this.msg + ':' + lastValue)
     }
   }
 }
