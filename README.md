@@ -2,7 +2,7 @@
 
 ## Short explanation of the solution
 
-
+![Logo](./src/assets/logo.png)
 
 
 
