@@ -1,4 +1,10 @@
-# covid
+# Diabete Customer monitor
+
+## Short explanation of the solution
+
+
+
+
 
 ## Project setup
 ```
@@ -22,3 +28,5 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
