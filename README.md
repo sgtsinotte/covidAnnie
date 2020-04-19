@@ -2,7 +2,7 @@
 
 ## Short explanation of the solution
 
-NB: this project has two repo, as two wway of doing thing, maintained by different people, here is the other one https://github.com/mtfaye/Insuguard
+NB: this project has two repo, with two different prototypes, here is the other one https://github.com/mtfaye/Insuguard
 
 ![Logo](./src/assets/logo.png)
 
