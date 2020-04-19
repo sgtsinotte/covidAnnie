@@ -19,7 +19,7 @@ export default {
       Customers: [
         {
           id: 1,
-          firstName: 'Anayah',
+          firstName: 'Robert',
           lastName: 'Casey',
           glucose: [
             {
@@ -147,7 +147,7 @@ export default {
               value: 87
             }
           ],
-          dateOfBirth: '1978-01-31',
+          dateOfBirth: '1960-01-31',
           phone: '555-555-1234'
         },
         {

@@ -17,7 +17,8 @@ export default {
     values: Array,
     className: String,
     min: Number,
-    max: Number
+    max: Number,
+    centerAdjustment: Number
   },
   data () {
     return {
@@ -86,7 +87,7 @@ export default {
 
       svg.append('text')
         .attr('class', 'title')
-        .attr('x', this.margin)
+        .attr('x', this.margin - this.centerAdjustment)
         .attr('y', chartHeight + 40)
         .attr('text-align', 'center')
         .text(this.msg + ':' + lastValue)
